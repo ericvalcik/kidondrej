@@ -11,10 +11,9 @@ export default function Home() {
   const onScroll = () => {
     const scrollTop = html.scrollTop
     const scrollBottom = html.scrollHeight - html.clientHeight - scrollTop
-    const maxScrollTop = html.scrollHeight - window.innerHeight
     const frameCount = 148
-    const scrollFraction = scrollTop / maxScrollTop
-    const frameIndex = Math.min(frameCount - 1, Math.ceil(scrollFraction * frameCount))
+    const scrollFraction = (scrollTop - 108) / (window.innerHeight * 4)
+    const frameIndex = Math.max(0, Math.min(frameCount - 1, Math.ceil(scrollFraction * frameCount)))
     window.requestAnimationFrame(() => {
       context?.clearRect(0, 0, canvas?.width || 0, canvas?.height || 0)
       context?.fillText(`Frame ${frameIndex}`, 200, window.innerHeight / 2)
