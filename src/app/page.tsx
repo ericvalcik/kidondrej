@@ -40,7 +40,7 @@ export default function Home() {
       if (showScroll) setShowScroll(false)
       const scrollTop = html.scrollTop
       const scrollBottom = html.scrollHeight - html.clientHeight - scrollTop
-      const scrollFraction = scrollTop / (window.innerHeight * 4)
+      const scrollFraction = scrollTop / (window.innerHeight * 2)
       const frameIndex = Math.max(0, Math.min(frameCount - 1, Math.ceil(scrollFraction * frameCount)))
       window.requestAnimationFrame(() => updateImage(frameIndex + 1))
       // is currently in view (overriding scroll behavior)
@@ -90,11 +90,12 @@ export default function Home() {
           <div className="w-full h-screen flex items-center justify-center">
             <div className="font-bold text-4xl tracking-tighter z-10 pb-[65vh]">kidOndrej</div>
           </div>
-          <div className="w-full h-[400vh] relative overflow-hidden">
+          <div className="w-full h-[200vh] relative overflow-hidden">
             <canvas ref={canvasRef} />
           </div>
-          <div className="w-full h-screen flex items-center justify-center bg-amber-300">
-            <div className="font-bold text-4xl tracking-tighter">end form</div>
+          <div className="w-full h-screen flex flex-col items-center justify-center">
+            <div className="font-bold text-4xl tracking-tighter">send me a messag 😆</div>
+            <button className="mt-4 px-4 py-2 bg-black text-white rounded-md">send</button>
           </div>
         </div>
       </div>
