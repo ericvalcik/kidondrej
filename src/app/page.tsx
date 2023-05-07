@@ -5,7 +5,6 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 export default function Home() {
   const [showScroll, setShowScroll] = useState(false)
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const html = document.documentElement
   let canvas = canvasRef.current
   let context = canvas?.getContext('2d')
   const frameCount = 148
@@ -13,6 +12,7 @@ export default function Home() {
     `https://kidondrej.s3.eu-north-1.amazonaws.com/output/${index.toString().padStart(4, '0')}.jpeg`
   const images = useMemo(() => {
     const images = new Map<string, HTMLImageElement>()
+    if (typeof window === 'undefined' || typeof document === 'undefined') return images
     for (let i = 1; i < frameCount; i++) {
       const img = new Image()
       img.src = currentFrame(i)
@@ -36,6 +36,7 @@ export default function Home() {
       if (context && img) context.drawImage(img, 0, 0)
     }
     const onScroll = () => {
+      const html = document.documentElement
       if (showScroll) setShowScroll(false)
       const scrollTop = html.scrollTop
       const scrollBottom = html.scrollHeight - html.clientHeight - scrollTop
@@ -57,7 +58,7 @@ export default function Home() {
     }
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
-  }, [canvas, context, html.clientHeight, html.scrollHeight, html.scrollTop, images])
+  }, [canvas, context, images])
 
   useEffect(() => {
     if (!showScroll) {
