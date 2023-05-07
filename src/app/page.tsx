@@ -45,14 +45,14 @@ export default function Home() {
       window.requestAnimationFrame(() => updateImage(frameIndex + 1))
       // is currently in view (overriding scroll behavior)
       if (canvas && scrollBottom > window.innerHeight && canvas?.style.position !== 'fixed') {
-        canvas.style.top = '0'
+        canvas.style.top = '150px'
         canvas.style.position = 'fixed'
       }
       // is going out of view (normal scroll behaviour)
       if (canvas && scrollBottom < window.innerHeight && canvas?.style.position !== 'absolute') {
         canvas.style.position = 'absolute'
         if (scrollBottom < window.innerHeight) {
-          canvas.style.top = `${html.scrollHeight - window.innerHeight * 3}px`
+          canvas.style.top = `${html.scrollHeight - window.innerHeight * 3 + 150}px`
         }
       }
     }
@@ -67,7 +67,7 @@ export default function Home() {
         canvas.width = 640
         canvas.height = 770
         canvas.style.position = 'fixed'
-        canvas.style.top = '0'
+        canvas.style.top = '150px'
         img.src = currentFrame(1)
         img.onload = function () {
           if (context) context.drawImage(img, 0, 0)
@@ -88,7 +88,7 @@ export default function Home() {
       <div className="flex items-center justify-center min-h-screen">
         <div className="w-[640px] flex flex-col items-center">
           <div className="w-full h-screen flex items-center justify-center">
-            <div className="font-bold text-4xl tracking-tighter z-10 pb-[65vh]">kidOndrej</div>
+            <div className="font-bold text-4xl tracking-tighter z-10 pb-[50vh]">kidOndrej</div>
           </div>
           <div className="w-full h-[200vh] relative overflow-hidden">
             <canvas ref={canvasRef} />
