@@ -6,9 +6,6 @@ html {
     height: 100vh;
 }
 
-body {
-    background: #000;
-}
 
 canvas {
     position: absolute;

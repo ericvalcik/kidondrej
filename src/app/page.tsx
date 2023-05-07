@@ -7,17 +7,30 @@ export default function Home() {
   const html = document.documentElement
   let canvas = canvasRef.current
   let context = canvas?.getContext('2d')
+  const frameCount = 148
+  const img = new Image()
+
+  const currentFrame = (index: number) =>
+    `https://kidondrej.s3.eu-north-1.amazonaws.com/output/${index.toString().padStart(4, '0')}.jpeg`
+
+  const preloadImages = () => {
+    for (let i = 1; i < frameCount; i++) {
+      const img = new Image()
+      img.src = currentFrame(i)
+    }
+  }
+
+  const updateImage = (index: number) => {
+    img.src = currentFrame(index)
+    if (context) context.drawImage(img, 0, 0)
+  }
 
   const onScroll = () => {
     const scrollTop = html.scrollTop
     const scrollBottom = html.scrollHeight - html.clientHeight - scrollTop
-    const frameCount = 148
     const scrollFraction = (scrollTop - 108) / (window.innerHeight * 4)
     const frameIndex = Math.max(0, Math.min(frameCount - 1, Math.ceil(scrollFraction * frameCount)))
-    window.requestAnimationFrame(() => {
-      context?.clearRect(0, 0, canvas?.width || 0, canvas?.height || 0)
-      context?.fillText(`Frame ${frameIndex}`, 200, window.innerHeight / 2)
-    })
+    window.requestAnimationFrame(() => updateImage(frameIndex + 1))
     // is currently in view (overriding scroll behavior)
     if (canvas && scrollTop > 108 && scrollBottom > 108 && canvas?.style.position !== 'fixed') {
       canvas.style.left = `${window.innerWidth / 2 - 290}px`
@@ -41,7 +54,6 @@ export default function Home() {
       canvas.height = window.window.innerHeight
       canvas.width = 640
       if (context) {
-        context.fillStyle = 'white'
         context.font = '50px monospace'
       }
     }
@@ -53,20 +65,25 @@ export default function Home() {
   }, [onScroll])
 
   useEffect(() => {
-    window.requestAnimationFrame(() => {
-      context?.clearRect(0, 0, canvas?.width || 0, canvas?.height || 0)
-      context?.fillText(`Frame 0`, 200, window.innerHeight / 2)
-    })
+    img.src = currentFrame(1)
+    if (canvas && context) {
+      canvas.width = 1158
+      canvas.height = 770
+      img.onload = function () {
+        if (context) context.drawImage(img, 0, 0)
+      }
+    }
+    preloadImages()
   }, [])
 
   return (
     <div className="flex items-center justify-center min-h-screen">
       <div className="max-w-[640px] flex flex-col items-center">
-        <div className="w-full text-white text-[72px]">This placeholder</div>
+        <div className="w-full  text-[72px]">This placeholder</div>
         <div className="w-full h-[500vh] relative overflow-hidden">
           <canvas ref={canvasRef} />
         </div>
-        <div className="w-full text-white text-[72px]">This placeholder</div>
+        <div className="w-full text-[72px]">This placeholder</div>
       </div>
     </div>
   )
