@@ -1,6 +1,8 @@
 'use client'
 
 import { useEffect, useMemo, useRef, useState } from 'react'
+import { Button } from '@/components/ui/button'
+import { Mail } from 'lucide-react'
 
 export default function Home() {
   const [showScroll, setShowScroll] = useState(false)
@@ -73,12 +75,13 @@ export default function Home() {
         }
       }
     }
-  }, [canvas, context])
+  }, [canvas, context, showScroll])
 
   useEffect(() => {
     const timeout = setTimeout(() => {
       setShowScroll(true)
     }, 3000)
+    window.addEventListener('scroll', () => clearTimeout(timeout))
     return () => clearTimeout(timeout)
   }, [])
 
@@ -94,7 +97,9 @@ export default function Home() {
           </div>
           <div className="w-full h-screen flex flex-col items-center justify-center">
             <div className="font-bold text-4xl tracking-tighter">send me a messag 😆</div>
-            <button className="mt-4 px-4 py-2 bg-black text-white rounded-md">send</button>
+            <Button>
+              <Mail className="mr-2 h-4 w-4" /> Send
+            </Button>
           </div>
         </div>
       </div>
