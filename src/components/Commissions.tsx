@@ -5,6 +5,9 @@ import { Input } from '@/components/ui/input'
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Slider } from '@/components/ui/slider'
 import { Label } from '@/components/ui/label'
+import { Calendar } from '@/components/ui/calendar'
+import { useState } from 'react'
+import { Textarea } from '@/components/ui/textarea'
 
 type Inputs = {
   ig: string
@@ -16,6 +19,7 @@ type Inputs = {
 }
 
 export function Commissions() {
+  const [date, setDate] = useState<Date | undefined>(new Date())
   const { control, register, handleSubmit, watch } = useForm<Inputs>({ defaultValues: { budget: [300] } })
 
   const onSubmit: SubmitHandler<Inputs> = (data, e) => {
@@ -24,12 +28,12 @@ export function Commissions() {
   }
 
   return (
-    <div className="w-full h-screen flex flex-col items-center justify-center px-8">
+    <div className="w-[278px] h-screen flex flex-col items-center justify-center ">
       <div className="font-semibold text-2xl tracking-tighter">
         Hey 👋, if u are interested in my service, fill in the form and lets work!
       </div>
       <form onSubmit={handleSubmit(onSubmit)} className="w-full mt-8">
-        <div className="flex flex-col w-full px-12 py-4 gap-2">
+        <div className="flex flex-col w-full py-4 gap-2">
           <Input placeholder="Instagram" {...register('ig')} />
           <Input type="email" placeholder="Email" {...register('email')} />
           <Controller
@@ -52,8 +56,10 @@ export function Commissions() {
               </Select>
             )}
           />
-          <Label htmlFor="budget">Budget</Label>
-          <div className="flex gap-2 pb-2">
+          <Label htmlFor="budget" className="mt-1">
+            Budget
+          </Label>
+          <div className="flex justify-between pb-2">
             <Controller
               control={control}
               name="budget"
@@ -71,6 +77,17 @@ export function Commissions() {
             />
             {watch('budget') && <div className="text-sm">{watch('budget')} $</div>}
           </div>
+          <Label htmlFor="deadline" className="mt-1">
+            Deadline
+          </Label>
+          <Calendar
+            id="deadline"
+            mode="single"
+            selected={date}
+            onSelect={setDate}
+            className="rounded-md border mx-auto"
+          />
+          <Textarea placeholder="Description" />
           <Button type="submit">
             <Mail className="mr-2 h-4 w-4" /> Send
           </Button>
