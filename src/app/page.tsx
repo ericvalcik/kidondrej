@@ -5,6 +5,7 @@ import { Commissions } from '@/components/Commissions'
 
 export default function Home() {
   const [showScroll, setShowScroll] = useState(false)
+  const [removeScroll, setRemoveScroll] = useState(false)
   const canvasRef = useRef<HTMLCanvasElement>(null)
   let canvas = canvasRef.current
   let context = canvas?.getContext('2d')
@@ -37,7 +38,10 @@ export default function Home() {
     }
     const onScroll = () => {
       const html = document.documentElement
-      if (showScroll) setShowScroll(false)
+      if (showScroll) {
+        setShowScroll(false)
+        setTimeout(() => setRemoveScroll(true), 200)
+      }
       const scrollTop = html.scrollTop
       const scrollBottom = html.scrollHeight - html.clientHeight - scrollTop
       const scrollFraction = scrollTop / (window.innerHeight * 2)
@@ -88,9 +92,13 @@ export default function Home() {
       const timeout = setTimeout(() => {
         setShowScroll(true)
       }, 1500)
-      window.addEventListener('scroll', () => clearTimeout(timeout))
+      window.addEventListener('scroll', () => {
+        setRemoveScroll(true)
+        clearTimeout(timeout)
+      })
       return () => clearTimeout(timeout)
     }
+    setRemoveScroll(true)
   }, [])
 
   return (
@@ -106,13 +114,15 @@ export default function Home() {
           <Commissions />
         </div>
       </div>
-      <div
-        className={`fixed bottom-0 w-screen p-6 text-center transition-all duration-200 ${
-          showScroll ? 'opacity-100' : 'opacity-0'
-        }`}
-      >
-        Scroll
-      </div>
+      {!removeScroll && (
+        <div
+          className={`fixed bottom-0 w-screen p-6 text-center transition-all duration-200 ${
+            showScroll ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
+          Scroll
+        </div>
+      )}
     </>
   )
 }
