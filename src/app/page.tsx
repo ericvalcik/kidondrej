@@ -8,8 +8,7 @@ export default function Home() {
   let canvas = canvasRef.current
   let context = canvas?.getContext('2d')
   const frameCount = 148
-  const currentFrame = (index: number) =>
-    `https://kidondrej.s3.eu-north-1.amazonaws.com/output/${index.toString().padStart(4, '0')}.jpeg`
+  const currentFrame = (index: number) => `/${index.toString().padStart(4, '0')}.jpeg`
   const images = useMemo(() => {
     const images = new Map<string, HTMLImageElement>()
     if (typeof window === 'undefined' || typeof document === 'undefined') return images
