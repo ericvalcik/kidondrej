@@ -80,7 +80,7 @@ export default function Home() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setShowScroll(true)
-    }, 3000)
+    }, 1500)
     window.addEventListener('scroll', () => clearTimeout(timeout))
     return () => clearTimeout(timeout)
   }, [])
