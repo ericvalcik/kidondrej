@@ -2,17 +2,8 @@ import { Button } from '@/components/ui/button'
 import { Mail } from 'lucide-react'
 import { SubmitHandler, useForm, Controller } from 'react-hook-form'
 import { Input } from '@/components/ui/input'
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue
-} from '@/components/ui/select'
+import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Slider } from '@/components/ui/slider'
-import { useState } from 'react'
 import { Label } from '@/components/ui/label'
 
 type Inputs = {
@@ -25,17 +16,11 @@ type Inputs = {
 }
 
 export function Commissions() {
-  const {
-    control,
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors }
-  } = useForm<Inputs>({ defaultValues: { budget: [300] } })
+  const { control, register, handleSubmit, watch } = useForm<Inputs>({ defaultValues: { budget: [300] } })
 
   const onSubmit: SubmitHandler<Inputs> = (data, e) => {
     e?.preventDefault()
-    console.log(data)
+    // console.log(data)
   }
 
   return (
