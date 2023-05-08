@@ -62,12 +62,17 @@ export default function Home() {
 
   useEffect(() => {
     if (!showScroll) {
+      const html = document.documentElement
+      const scrollTop = html.scrollTop
+      const scrollBottom = html.scrollHeight - html.clientHeight - scrollTop
       const img = new Image()
       if (canvas && context) {
         canvas.width = 640
         canvas.height = 770
-        canvas.style.position = 'fixed'
-        canvas.style.top = '150px'
+        if (scrollBottom > window.innerHeight) {
+          canvas.style.position = 'fixed'
+          canvas.style.top = '150px'
+        }
         img.src = currentFrame(1)
         img.onload = function () {
           if (context) context.drawImage(img, 0, 0)
@@ -77,11 +82,15 @@ export default function Home() {
   }, [canvas, context, showScroll])
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      setShowScroll(true)
-    }, 1500)
-    window.addEventListener('scroll', () => clearTimeout(timeout))
-    return () => clearTimeout(timeout)
+    const html = document.documentElement
+    const scrollTop = html.scrollTop
+    if (scrollTop === 0) {
+      const timeout = setTimeout(() => {
+        setShowScroll(true)
+      }, 1500)
+      window.addEventListener('scroll', () => clearTimeout(timeout))
+      return () => clearTimeout(timeout)
+    }
   }, [])
 
   return (
