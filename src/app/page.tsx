@@ -1,8 +1,7 @@
 'use client'
 
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { Button } from '@/components/ui/button'
-import { Mail } from 'lucide-react'
+import { Commissions } from '@/components/Commissions'
 
 export default function Home() {
   const [showScroll, setShowScroll] = useState(false)
@@ -59,7 +58,7 @@ export default function Home() {
     }
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
-  }, [canvas, context, images])
+  }, [canvas, context, images, showScroll])
 
   useEffect(() => {
     if (!showScroll) {
@@ -95,12 +94,7 @@ export default function Home() {
           <div className="w-full h-[200vh] relative overflow-hidden">
             <canvas ref={canvasRef} />
           </div>
-          <div className="w-full h-screen flex flex-col items-center justify-center">
-            <div className="font-bold text-4xl tracking-tighter">send me a messag 😆</div>
-            <Button>
-              <Mail className="mr-2 h-4 w-4" /> Send
-            </Button>
-          </div>
+          <Commissions />
         </div>
       </div>
       <div
