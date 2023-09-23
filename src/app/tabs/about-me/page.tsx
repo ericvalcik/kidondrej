@@ -13,7 +13,7 @@ export default function Page() {
         capture the essence their of music.
       </P>
       <hr className="mt-6" />
-      <div className="flex items-center gap-2 mt-6 text-stone-800 decoration-stone-300 underline-offset-4">
+      <div className="flex items-center gap-2 mt-6 text-stone-800 decoration-stone-300 underline-offset-4 flex-wrap">
         <a
           href="https://www.instagram.com/kidondrej/"
           className="flex items-center gap-1 underline"

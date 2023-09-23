@@ -28,26 +28,24 @@ export const Navbar: FC = () => {
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/tabs/projects" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Projects
-            </NavigationMenuLink>
-          </Link>
+          <NavigationMenuLink
+            className={cn(
+              "text-gray-500 group-hover:text-gray-500 group-hover:bg-white",
+              navigationMenuTriggerStyle(),
+            )}
+          >
+            Projects
+          </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Popover>
-            <PopoverTrigger>
-              <NavigationMenuLink
-                className={cn(
-                  "text-gray-500 group-hover:text-gray-500 group-hover:bg-white",
-                  navigationMenuTriggerStyle(),
-                )}
-              >
-                Shop
-              </NavigationMenuLink>
-            </PopoverTrigger>
-            <PopoverContent side="top">SOON</PopoverContent>
-          </Popover>
+          <NavigationMenuLink
+            className={cn(
+              "text-gray-500 group-hover:text-gray-500 group-hover:bg-white",
+              navigationMenuTriggerStyle(),
+            )}
+          >
+            Shop
+          </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
