@@ -13,7 +13,7 @@ export default function Page() {
         the essence of music. Explore his work on social media.
       </P>
       <hr className="mt-6" />
-      <div className="flex gap-6 mt-6 text-gray-500">
+      <div className="flex gap-6 mt-6 text-slate-500">
         <a
           href="https://www.instagram.com/kidondrej/"
           className="flex items-center gap-1 underline underline-offset-2"
