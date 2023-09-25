@@ -12,7 +12,14 @@ export default function Page() {
         the United States and the CZ/SK music scenes to create visuals that
         capture the essence their of music.
       </P>
+      <P>
+        For inquiries and collaborations, please contact me via email:{" "}
+        <a href="mailto:kidondrej@gmail.com" className="underline">
+          kidondrej@gmail.com
+        </a>
+      </P>
       <hr className="mt-6" />
+      <P>To see more of my work, follow me on my socials:</P>
       <div className="flex items-center gap-2 mt-6 text-stone-800 decoration-stone-300 underline-offset-4 flex-wrap">
         <a
           href="https://www.instagram.com/kidondrej/"
@@ -28,10 +35,6 @@ export default function Page() {
         >
           <TikTok />
           kidondrej
-        </a>
-        <span className="mb-2 leading-[2px]">.</span>
-        <a href="mailto:kidondrej@gmail.com" className="underline">
-          kidondrej@gmail.com
         </a>
       </div>
     </div>
