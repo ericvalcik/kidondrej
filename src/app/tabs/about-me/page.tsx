@@ -10,7 +10,7 @@ export default function Page() {
         Based in Prague, kidOndrej is a 3D artist known for merging 3D design
         with his passion for rap music. He collaborates with figures from both
         the United States and the CZ/SK music scenes to create visuals that
-        capture the essence their of music.
+        capture the essence of their music.
       </P>
       <P>
         For inquiries and collaborations, please contact me via email:{" "}
