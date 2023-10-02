@@ -18,7 +18,7 @@ import { cn } from "@/lib/utils";
 
 export const Navbar: FC = () => {
   return (
-    <NavigationMenu>
+    <NavigationMenu className="z-40">
       <NavigationMenuList>
         <NavigationMenuItem>
           <Link href="/tabs/about-me" legacyBehavior passHref>
