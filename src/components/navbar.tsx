@@ -28,16 +28,19 @@ export const Navbar: FC = () => {
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/tabs/projects" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Projects
-            </NavigationMenuLink>
-          </Link>
+          <NavigationMenuLink
+            className={cn(
+              "text-gray-500 group-hover:text-gray-500",
+              navigationMenuTriggerStyle(),
+            )}
+          >
+            Projects
+          </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuLink
             className={cn(
-              "text-gray-500 group-hover:text-gray-500 group-hover:bg-white",
+              "text-gray-500 group-hover:text-gray-500",
               navigationMenuTriggerStyle(),
             )}
           >
