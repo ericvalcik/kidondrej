@@ -1,20 +1,40 @@
-"use client";
-
 import ReactPlayer from "react-player/lazy";
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 
-export const Video = () => {
-  const [muted, setMuted] = useState(true);
+interface VideoProps {
+  videoUrl: string;
+  name: string;
+  url?: string;
+  setPlaying: React.Dispatch<React.SetStateAction<string>>;
+  playing: string;
+}
 
+export const Video: FC<VideoProps> = ({
+  playing,
+  videoUrl,
+  name,
+  url,
+  setPlaying,
+}) => {
   return (
-    <div onClick={() => setMuted(!muted)} className="rounded-xl overflow-clip">
+    <div
+      onClick={() => {
+        if (playing === name) {
+          setPlaying("");
+        } else {
+          setPlaying(name);
+        }
+      }}
+      className="rounded-xl overflow-clip [&:not(:first-child)]:mt-4"
+    >
       <ReactPlayer
-        url="/similivinlife/klip.mp4"
+        url={videoUrl}
         loop={true}
-        playing={true}
-        muted={muted}
-        width="200px"
-        height="200px"
+        playing={playing === name}
+        muted={playing !== name}
+        width="328px"
+        height="328px"
+        controls={false}
         style={{ borderRadius: "inherit" }}
       />
     </div>
