@@ -19,7 +19,6 @@ export default function Page() {
         </a>
       </P>
       <hr className="mt-6" />
-      <P>To see more of my work, follow me on my socials:</P>
       <div className="flex items-center gap-2 mt-6 text-stone-800 decoration-stone-300 underline-offset-4 flex-wrap">
         <a
           href="https://www.instagram.com/kidondrej/"
