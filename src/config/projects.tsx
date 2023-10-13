@@ -240,6 +240,50 @@ export const globalProjects: Projects[] = [
     },
     slug: "keyflock",
   },
+  {
+    title: "makeuruzi.com - Uzi Character Generator",
+    artist: "oneonlyeric",
+    content: () => {
+      return (
+        <>
+          <H1>makeuruzi.com - Uzi Character Generator</H1>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="w-auto sm:w-[304px] h-auto">
+              <Image
+                src="/makeuruzi/1.jpg"
+                alt="Cover Art"
+                width={1080}
+                height={1350}
+                quality={100}
+                className="rounded-xl overflow-clip"
+              />
+            </div>
+            <div className="w-auto sm:w-[304px] h-auto">
+              <Image
+                src="/makeuruzi/2.jpg"
+                alt="Merch Design"
+                width={1080}
+                height={1350}
+                quality={100}
+                className="rounded-xl overflow-clip"
+              />
+            </div>
+          </div>
+          <P>
+            Fan made Uzi Character Generator App by{" "}
+            <Redirect href="https://www.instagram.com/oneonlyeric/">
+              @oneonlyeric
+            </Redirect>{" "}
+            designed by me.
+            <br />
+            Try the app out at{" "}
+            <Redirect href="https://makeuruzi.com">makeuruzi.com</Redirect>.
+          </P>
+        </>
+      );
+    },
+    slug: "makeuruzi",
+  },
 ];
 
 export const domesticProjects: Projects[] = [
