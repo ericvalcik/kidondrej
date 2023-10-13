@@ -208,45 +208,31 @@ export const projects: Projects[] = [
     slug: "keyflock",
   },
   {
-    title: "D.O.A. Tape Care Package (Official Visualisers)",
-    artist: "Kay Flock",
+    title: "OGM Tour Promo Animations",
+    artist: "Our Generation Music",
     content: () => {
       return (
         <>
-          <H1>3D Scenes for Official Visualisers for Key Flock&apos;s tape</H1>
-          <Video
-            videoUrl={"/keyflock/vid.mp4"}
-            width={624}
-            height={352}
-            className="mb-10 hidden sm:block"
-          />
-          <div className="sm:hidden flex justify-center">
+          <H1>3D Animations for Social Media promo</H1>
+          <div className="flex justify-center">
             <Video
-              videoUrl={"/keyflock/vid.mp4"}
+              videoUrl={"/ogm/f1lthy.mov"}
               width={304}
-              height={171}
+              height={540}
               className="mb-10"
             />
           </div>
           <P>
-            Directed + edited by{" "}
-            <Redirect href="https://www.instagram.com/tmgfx_/">
-              @tmgfx_
+            Game menu like 3D Animations for Our Generation Music tour promo.
+            Animations were made for artists attending the tour, including{" "}
+            <Redirect href="https://www.instagram.com/summrsxo/">
+              @summrsxo
             </Redirect>
-            <br />
-            Character Design by{" "}
-            <Redirect href="https://www.instagram.com/kyleparnell/">
-              @kyleparnell
-            </Redirect>
-            <br />
-            Additional 3D scenes by{" "}
-            <Redirect href="https://www.instagram.com/bloodmoneymedia/">
-              @bloodmoneymedia
+            ,{" "}
+            <Redirect href="https://www.instagram.com/wakeupf1lthy/">
+              @wakeupf1lthy
             </Redirect>{" "}
-            <Redirect href="https://www.instagram.com/kyleparnell/">
-              @kyleparnell
-            </Redirect>{" "}
-            and me
+            and more.
           </P>
         </>
       );
