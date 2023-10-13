@@ -1,6 +1,6 @@
 import { FC } from "react";
 import dynamic from "next/dynamic";
-import { H1 } from "@/components/typography";
+import { H1, P } from "@/components/typography";
 import Redirect from "@/components/Redirect";
 
 const Video = dynamic(() => import("@/components/Video"), { ssr: false });
@@ -16,7 +16,37 @@ export const projects: Projects[] = [
   {
     title: "The 1212 NFT Collection",
     artist: "Iann Dior",
-    content: () => <>Designed by me</>,
+    content: () => {
+      return (
+        <>
+          <H1>Iann Dior&apos;s 1212 NFT Collection</H1>
+          <Video
+            videoUrl={"/iann/nft-promo.mp4"}
+            width={624}
+            height={624}
+            className="mb-10 hidden sm:block"
+          />
+          <div className="sm:hidden flex justify-center">
+            <Video
+              videoUrl={"/iann/nft-promo.mp4"}
+              width={304}
+              height={304}
+              className="mb-10"
+            />
+          </div>
+          Together with{" "}
+          <Redirect href="https://www.instagram.com/ianndior/">
+            @ianndior
+          </Redirect>{" "}
+          I designed and generated 1212 unique 3D Figures that were all released
+          in a{" "}
+          <Redirect href="https://www.oneof.com/app/drops/bd96480a-6ac3-45f4-9119-02656ee8a60b/details">
+            NFT Collection
+          </Redirect>{" "}
+          in the summer of 2022.
+        </>
+      );
+    },
     slug: "1212-nft-collection",
   },
   {
@@ -61,15 +91,29 @@ export const projects: Projects[] = [
     content: () => {
       return (
         <>
-          3D Animation for{" "}
-          <a href="https://www.instagram.com/wynnlasvegas/" target="_blank">
-            @wynnlasvegas
-          </a>
-          &apos;s Recap video, art direction by{" "}
-          <a href="https://www.instagram.com/maxgilberg/" target="_blank">
-            @maxgilberg
-          </a>
-          .
+          <H1>3D Animation for Wynn&apos;s recap video</H1>
+          <div className="flex justify-center">
+            <Video
+              videoUrl={"/marshmello/marshmellow.mp4"}
+              width={304}
+              height={540}
+              className="mb-10"
+            />
+          </div>
+          <P>
+            3D Animation for{" "}
+            <Redirect href="https://www.instagram.com/wynnlasvegas/">
+              @wynnlasvegas
+            </Redirect>
+            &apos;s Recap video.
+          </P>
+          <P>
+            Art direction by{" "}
+            <Redirect href="https://www.instagram.com/maxgilberg/">
+              @maxgilberg
+            </Redirect>
+            .
+          </P>
         </>
       );
     },
