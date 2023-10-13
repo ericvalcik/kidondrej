@@ -415,6 +415,143 @@ export const domesticProjects: Projects[] = [
     },
     slug: "davidluu",
   },
+  {
+    title: "Music Visualiser - Honeymoon",
+    artist: "SIMILIVINLIFE",
+    content: () => {
+      return (
+        <>
+          <H1>Music Video Visualiser for SIMILIVINLIFE</H1>
+          <Video
+            videoUrl={"/similivinlife/klip.mp4"}
+            width={624}
+            height={624}
+            className="mb-10 hidden sm:block"
+          />
+          <div className="sm:hidden flex justify-center">
+            <Video
+              videoUrl={"/similivinlife/klip.mp4"}
+              width={304}
+              height={304}
+              className="mb-10"
+            />
+          </div>
+          <P>
+            Music Video Visualiser for Honeymoon by{" "}
+            <Redirect href="https://www.instagram.com/similivinlife/">
+              @similivinlife
+            </Redirect>
+            .
+          </P>
+        </>
+      );
+    },
+    slug: "similivinlife",
+  },
+  {
+    title: "SNY II - Cover Art and Animations Pack",
+    artist: "Nicholas Naison",
+    content: () => {
+      return (
+        <>
+          <H1>Cover Art and Animations for a Music Video</H1>
+          <div className="hidden sm:flex justify-center gap-4 flex-row">
+            <Video
+              videoUrl={"/nicholas/visual.mp4"}
+              width={304}
+              height={304}
+              className="mb-10"
+            />
+            <div className="w-[304px] h-[304px] rounded-xl overflow-clip">
+              <Image
+                src="/nicholas/cover.jpg"
+                alt="Decks"
+                width={1000}
+                height={1000}
+              />
+            </div>
+          </div>
+          <div className="flex sm:hidden flex-col justify-center gap-4 items-center">
+            <Video videoUrl={"/nicholas/visual.mp4"} width={292} height={292} />
+            <div className="w-[292px] h-[292px] rounded-xl overflow-clip">
+              <Image
+                src="/nicholas/cover.jpg"
+                alt="Decks"
+                width={1000}
+                height={1000}
+              />
+            </div>
+          </div>
+          <P>
+            Cover Art and Animations for{" "}
+            <Redirect href="https://www.instagram.com/nicholasnaisson/">
+              @nicholasnaisson
+            </Redirect>
+            &apos;s album SNY II.
+            <br />
+            Go watch the Music Video on{" "}
+            <Redirect href="https://youtu.be/oG48LPXQTAw?si=YLBDXBm2aAyaOUx0">
+              YouTube
+            </Redirect>
+            .
+          </P>
+        </>
+      );
+    },
+    slug: "nicholas",
+  },
+  {
+    title: "FROM HELL WITH LOVE Cover Art and Motion",
+    artist: "Skinny Barber, Darewin",
+    content: () => {
+      return (
+        <>
+          <H1>Cover Art and Animations for a Music Video</H1>
+          <div className="hidden sm:flex justify-center gap-4 flex-row">
+            <Video
+              videoUrl={"/nicholas/visual.mp4"}
+              width={304}
+              height={304}
+              className="mb-10"
+            />
+            <div className="w-[304px] h-[304px] rounded-xl overflow-clip">
+              <Image
+                src="/nicholas/cover.jpg"
+                alt="Decks"
+                width={1000}
+                height={1000}
+              />
+            </div>
+          </div>
+          <div className="flex sm:hidden flex-col justify-center gap-4 items-center">
+            <Video videoUrl={"/nicholas/visual.mp4"} width={292} height={292} />
+            <div className="w-[292px] h-[292px] rounded-xl overflow-clip">
+              <Image
+                src="/nicholas/cover.jpg"
+                alt="Decks"
+                width={1000}
+                height={1000}
+              />
+            </div>
+          </div>
+          <P>
+            Cover Art and Animations for{" "}
+            <Redirect href="https://www.instagram.com/nicholasnaisson/">
+              @nicholasnaisson
+            </Redirect>
+            &apos;s album SNY II.
+            <br />
+            Go watch the Music Video on{" "}
+            <Redirect href="https://youtu.be/oG48LPXQTAw?si=YLBDXBm2aAyaOUx0">
+              YouTube
+            </Redirect>
+            .
+          </P>
+        </>
+      );
+    },
+    slug: "skinny-barber",
+  },
 ];
 
 export const projects: Projects[] = [...globalProjects, ...domesticProjects];
