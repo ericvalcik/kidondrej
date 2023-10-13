@@ -19,7 +19,7 @@ export default function Page() {
         </a>
       </P>
       <hr className="mt-6" />
-      <div className="flex items-center gap-2 mt-6 text-stone-800 decoration-stone-300 underline-offset-4 flex-wrap">
+      <div className="flex items-center gap-2 mt-6 text-accent-foreground/70 decoration-accent-foreground/70 underline-offset-4 flex-wrap">
         <a
           href="https://www.instagram.com/kidondrej/"
           className="flex items-center gap-1 underline"
