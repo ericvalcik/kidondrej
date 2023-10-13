@@ -39,7 +39,7 @@ export const globalProjects: Projects[] = [
           <Redirect href="https://www.instagram.com/ianndior/">
             @ianndior
           </Redirect>{" "}
-          I designed and generated 1212 unique 3D Figures that were all released
+          I designed and generated 1212 unique 3D figures that were all released
           in a{" "}
           <Redirect href="https://www.oneof.com/app/drops/bd96480a-6ac3-45f4-9119-02656ee8a60b/details">
             NFT Collection
@@ -111,8 +111,7 @@ export const globalProjects: Projects[] = [
               @marshmello
             </Redirect>
             &apos;s Recap video.
-          </P>
-          <P>
+            <br />
             Art direction by{" "}
             <Redirect href="https://www.instagram.com/maxgilberg/">
               @maxgilberg
@@ -149,8 +148,7 @@ export const globalProjects: Projects[] = [
               @zackbia
             </Redirect>
             &apos;s Recap video.
-          </P>
-          <P>
+            <br />
             Art direction by{" "}
             <Redirect href="https://www.instagram.com/maxgilberg/">
               @maxgilberg
@@ -229,7 +227,8 @@ export const globalProjects: Projects[] = [
             Additional 3D scenes by{" "}
             <Redirect href="https://www.instagram.com/bloodmoneymedia/">
               @bloodmoneymedia
-            </Redirect>{" "}
+            </Redirect>
+            ,{" "}
             <Redirect href="https://www.instagram.com/kyleparnell/">
               @kyleparnell
             </Redirect>{" "}
