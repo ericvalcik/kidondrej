@@ -369,6 +369,52 @@ export const domesticProjects: Projects[] = [
     },
     slug: "pod-drn",
   },
+  {
+    title: "Skate Deck Design",
+    artist: "David Luu",
+    content: () => {
+      return (
+        <>
+          <H1>Skateboard Deck Design for David Luu</H1>
+          <div className="hidden sm:flex justify-center gap-4 flex-row">
+            <Video
+              videoUrl={"/davidluu/vid.MOV"}
+              width={260}
+              height={463}
+              className="mb-10"
+            />
+            <div className="w-[348px] h-[463px] rounded-xl overflow-clip">
+              <Image
+                src="/davidluu/decks.jpg"
+                alt="Decks"
+                width={3024}
+                height={4032}
+              />
+            </div>
+          </div>
+          <div className="flex sm:hidden flex-col justify-center gap-4 items-center">
+            <Video videoUrl={"/davidluu/vid.MOV"} width={292} height={519} />
+            <div className="w-[292px] h-auto rounded-xl overflow-clip">
+              <Image
+                src="/davidluu/decks.jpg"
+                alt="Decks"
+                width={3024}
+                height={4032}
+              />
+            </div>
+          </div>
+          <P>
+            Skateboard deck design and promo animation for{" "}
+            <Redirect href="https://www.instagram.com/realdavidluu/">
+              @realdavidluu
+            </Redirect>
+            .
+          </P>
+        </>
+      );
+    },
+    slug: "davidluu",
+  },
 ];
 
 export const projects: Projects[] = [...globalProjects, ...domesticProjects];
