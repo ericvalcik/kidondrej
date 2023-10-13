@@ -12,7 +12,7 @@ type Projects = {
   content: FC;
 };
 
-export const projects: Projects[] = [
+export const globalProjects: Projects[] = [
   {
     title: "The 1212 NFT Collection",
     artist: "Iann Dior",
@@ -162,6 +162,38 @@ export const projects: Projects[] = [
     slug: "zacbia",
   },
   {
+    title: "OGM Tour Promo Animations",
+    artist: "Our Generation Music",
+    content: () => {
+      return (
+        <>
+          <H1>3D Animations for Social Media promo</H1>
+          <div className="flex justify-center">
+            <Video
+              videoUrl={"/ogm/f1lthy.mov"}
+              width={304}
+              height={540}
+              className="mb-10"
+            />
+          </div>
+          <P>
+            Game menu like 3D Animations for Our Generation Music tour promo.
+            Animations were made for artists attending the tour, including{" "}
+            <Redirect href="https://www.instagram.com/summrsxo/">
+              @summrsxo
+            </Redirect>
+            ,{" "}
+            <Redirect href="https://www.instagram.com/wakeupf1lthy/">
+              @wakeupf1lthy
+            </Redirect>{" "}
+            and more.
+          </P>
+        </>
+      );
+    },
+    slug: "ogm",
+  },
+  {
     title: "D.O.A. Tape Care Package (Official Visualisers)",
     artist: "Kay Flock",
     content: () => {
@@ -207,36 +239,94 @@ export const projects: Projects[] = [
     },
     slug: "keyflock",
   },
+];
+
+export const domesticProjects: Projects[] = [
   {
-    title: "OGM Tour Promo Animations",
-    artist: "Our Generation Music",
+    title: "Co Ty Oči - Starting and Ending Music Video Animations",
+    artist: "Yzomandias, Nik Tendo",
     content: () => {
       return (
         <>
-          <H1>3D Animations for Social Media promo</H1>
-          <div className="flex justify-center">
+          <H1>Co Ty Oči - Starting and Ending Music Video Animations</H1>
+          <Video
+            videoUrl={"/yzo/cotyoci.mp4"}
+            width={624}
+            height={624}
+            className="mb-10 hidden sm:block"
+          />
+          <div className="sm:hidden flex justify-center">
             <Video
-              videoUrl={"/ogm/f1lthy.mov"}
+              videoUrl={"/yzo/cotyoci.mp4"}
               width={304}
-              height={540}
+              height={304}
               className="mb-10"
             />
           </div>
           <P>
-            Game menu like 3D Animations for Our Generation Music tour promo.
-            Animations were made for artists attending the tour, including{" "}
-            <Redirect href="https://www.instagram.com/summrsxo/">
-              @summrsxo
-            </Redirect>
-            ,{" "}
-            <Redirect href="https://www.instagram.com/wakeupf1lthy/">
-              @wakeupf1lthy
+            Graphic design and 3D animations.
+            <br />
+            Music video was done by{" "}
+            <Redirect href="https://www.youtube.com/@MOSTWANTEDRAP">
+              @MOSTWANTEDRAP
             </Redirect>{" "}
-            and more.
+            , go check it out on{" "}
+            <Redirect href="https://www.youtube.com/watch?v=1ufQan5qCKI">
+              YouTube
+            </Redirect>
+            .
           </P>
         </>
       );
     },
-    slug: "ogm",
+    slug: "cotyoci",
+  },
+  {
+    title: "Collectibe Toys",
+    artist: "Yzomandias, Nik Tendo",
+    content: () => {
+      return (
+        <>
+          <H1>Collectibe Toys - 3D Modelling</H1>
+          <Video
+            videoUrl={"/yzo/nikspin.MOV"}
+            width={624}
+            height={624}
+            className="mb-10 hidden sm:block"
+          />
+          <div className="sm:hidden flex justify-center">
+            <Video
+              videoUrl={"/yzo/nikspin.MOV"}
+              width={304}
+              height={304}
+              className="mb-10"
+            />
+          </div>
+          <P>
+            3D Modelling of collectible toys for{" "}
+            <Redirect href="https://www.instagram.com/yzomandias/">
+              @yzomandias
+            </Redirect>{" "}
+            and{" "}
+            <Redirect href="https://www.instagram.com/goldcigo/">
+              @goldcigo
+            </Redirect>
+            <br />
+            Print was done by{" "}
+            <Redirect href="https://www.instagram.com/adambaca/">
+              @adambaca
+            </Redirect>{" "}
+            and{" "}
+            <Redirect href="https://www.instagram.com/kopecak/">
+              @kopecak
+            </Redirect>
+            .
+          </P>
+        </>
+      );
+    },
+    slug: "collectible-toys",
   },
 ];
+
+export const projects: Projects[] = [...globalProjects, ...domesticProjects];

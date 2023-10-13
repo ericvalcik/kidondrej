@@ -2,8 +2,8 @@
 
 import React, { FC } from "react";
 import { useRouter } from "next/navigation";
-import { H1, P } from "@/components/typography";
-import { projects } from "@/config/projects";
+import { H1, H2, P } from "@/components/typography";
+import { globalProjects, domesticProjects } from "@/config/projects";
 
 export default function Page() {
   return (
@@ -11,7 +11,18 @@ export default function Page() {
       <H1>Projects</H1>
       <P>Here are some of the projects I worked on:</P>
       <div className="flex flex-col pt-8">
-        {projects.map((project) => (
+        {globalProjects.map((project) => (
+          <ProjectItem
+            key={project.slug}
+            title={project.title}
+            description={project.artist}
+            link={project.slug}
+          />
+        ))}
+      </div>
+      <H2>CZ/SK Projects:</H2>
+      <div className="flex flex-col pt-2">
+        {domesticProjects.map((project) => (
           <ProjectItem
             key={project.slug}
             title={project.title}
