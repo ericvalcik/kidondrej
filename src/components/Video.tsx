@@ -1,42 +1,38 @@
+"use client";
+
 import ReactPlayer from "react-player/lazy";
 import React, { FC, useState } from "react";
+import { cn } from "@/lib/utils";
 
 interface VideoProps {
   videoUrl: string;
-  name: string;
-  url?: string;
-  setPlaying: React.Dispatch<React.SetStateAction<string>>;
-  playing: string;
+  width?: number;
+  height?: number;
+  className?: string;
 }
 
-export const Video: FC<VideoProps> = ({
-  playing,
-  videoUrl,
-  name,
-  url,
-  setPlaying,
-}) => {
+const Video: FC<VideoProps> = ({ videoUrl, width, height, className }) => {
+  const [playing, setPlaying] = useState(false);
+
   return (
     <div
       onClick={() => {
-        if (playing === name) {
-          setPlaying("");
-        } else {
-          setPlaying(name);
-        }
+        setPlaying(!playing);
       }}
-      className="rounded-xl overflow-clip [&:not(:first-child)]:mt-4"
+      className={cn("rounded-xl overflow-clip", className)}
     >
       <ReactPlayer
         url={videoUrl}
         loop={true}
-        playing={playing === name}
-        muted={playing !== name}
-        width="328px"
-        height="328px"
+        playing={playing}
+        muted={!playing}
+        width={`${width}px`}
+        height={`${height}px`}
         controls={false}
         style={{ borderRadius: "inherit" }}
       />
     </div>
   );
 };
+
+export default Video;

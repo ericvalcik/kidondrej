@@ -3,6 +3,7 @@
 import React, { FC } from "react";
 import { useRouter } from "next/navigation";
 import { H1, P } from "@/components/typography";
+import { projects } from "@/config/projects";
 
 export default function Page() {
   return (
@@ -10,12 +11,14 @@ export default function Page() {
       <H1>Projects</H1>
       <P>Here are some of the projects I worked on:</P>
       <div className="flex flex-col pt-8">
-        <ProjectItem
-          title="Iann Dior"
-          description="NFT Collection, 3D visualizer"
-          link="iann-dior"
-        />
-        <ProjectItem title="SIMILIVINLIFE" description="visualiser" link="#" />
+        {projects.map((project) => (
+          <ProjectItem
+            key={project.slug}
+            title={project.title}
+            description={project.artist}
+            link={project.slug}
+          />
+        ))}
       </div>
     </>
   );
