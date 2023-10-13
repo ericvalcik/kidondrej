@@ -24,7 +24,7 @@ const Video: FC<VideoProps> = ({ videoUrl, width, height, className }) => {
       <ReactPlayer
         url={videoUrl}
         loop={true}
-        playing={playing}
+        playing={true}
         muted={!playing}
         width={`${width}px`}
         height={`${height}px`}
