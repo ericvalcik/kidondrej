@@ -86,7 +86,7 @@ export const projects: Projects[] = [
     slug: "saddest-soundtrack-animation",
   },
   {
-    title: "Recap 3D Animation",
+    title: "3D Animation",
     artist: "Marshmello",
     content: () => {
       return (
@@ -104,6 +104,10 @@ export const projects: Projects[] = [
             3D Animation for{" "}
             <Redirect href="https://www.instagram.com/wynnlasvegas/">
               @wynnlasvegas
+            </Redirect>{" "}
+            and{" "}
+            <Redirect href="https://www.instagram.com/marshmello/">
+              @marshmello
             </Redirect>
             &apos;s Recap video.
           </P>
@@ -118,5 +122,135 @@ export const projects: Projects[] = [
       );
     },
     slug: "marshmello",
+  },
+  {
+    title: "3D Animation",
+    artist: "Zackbia",
+    content: () => {
+      return (
+        <>
+          <H1>3D Animation for Wynn&apos;s recap video</H1>
+          <div className="flex justify-center">
+            <Video
+              videoUrl={"/zacbia/zac.mp4"}
+              width={304}
+              height={540}
+              className="mb-10"
+            />
+          </div>
+          <P>
+            3D Animation for{" "}
+            <Redirect href="https://www.instagram.com/wynnlasvegas/">
+              @wynnlasvegas
+            </Redirect>{" "}
+            and{" "}
+            <Redirect href="https://www.instagram.com/zackbia/">
+              @zackbia
+            </Redirect>
+            &apos;s Recap video.
+          </P>
+          <P>
+            Art direction by{" "}
+            <Redirect href="https://www.instagram.com/maxgilberg/">
+              @maxgilberg
+            </Redirect>
+            .
+          </P>
+        </>
+      );
+    },
+    slug: "zacbia",
+  },
+  {
+    title: "D.O.A. Tape Care Package (Official Visualisers)",
+    artist: "Kay Flock",
+    content: () => {
+      return (
+        <>
+          <H1>3D Scenes for Official Visualisers for Key Flock&apos;s tape</H1>
+          <Video
+            videoUrl={"/keyflock/vid.mp4"}
+            width={624}
+            height={352}
+            className="mb-10 hidden sm:block"
+          />
+          <div className="sm:hidden flex justify-center">
+            <Video
+              videoUrl={"/keyflock/vid.mp4"}
+              width={304}
+              height={171}
+              className="mb-10"
+            />
+          </div>
+          <P>
+            Directed + edited by{" "}
+            <Redirect href="https://www.instagram.com/tmgfx_/">
+              @tmgfx_
+            </Redirect>
+            <br />
+            Character Design by{" "}
+            <Redirect href="https://www.instagram.com/kyleparnell/">
+              @kyleparnell
+            </Redirect>
+            <br />
+            Additional 3D scenes by{" "}
+            <Redirect href="https://www.instagram.com/bloodmoneymedia/">
+              @bloodmoneymedia
+            </Redirect>{" "}
+            <Redirect href="https://www.instagram.com/kyleparnell/">
+              @kyleparnell
+            </Redirect>{" "}
+            and me
+          </P>
+        </>
+      );
+    },
+    slug: "keyflock",
+  },
+  {
+    title: "D.O.A. Tape Care Package (Official Visualisers)",
+    artist: "Kay Flock",
+    content: () => {
+      return (
+        <>
+          <H1>3D Scenes for Official Visualisers for Key Flock&apos;s tape</H1>
+          <Video
+            videoUrl={"/keyflock/vid.mp4"}
+            width={624}
+            height={352}
+            className="mb-10 hidden sm:block"
+          />
+          <div className="sm:hidden flex justify-center">
+            <Video
+              videoUrl={"/keyflock/vid.mp4"}
+              width={304}
+              height={171}
+              className="mb-10"
+            />
+          </div>
+          <P>
+            Directed + edited by{" "}
+            <Redirect href="https://www.instagram.com/tmgfx_/">
+              @tmgfx_
+            </Redirect>
+            <br />
+            Character Design by{" "}
+            <Redirect href="https://www.instagram.com/kyleparnell/">
+              @kyleparnell
+            </Redirect>
+            <br />
+            Additional 3D scenes by{" "}
+            <Redirect href="https://www.instagram.com/bloodmoneymedia/">
+              @bloodmoneymedia
+            </Redirect>{" "}
+            <Redirect href="https://www.instagram.com/kyleparnell/">
+              @kyleparnell
+            </Redirect>{" "}
+            and me
+          </P>
+        </>
+      );
+    },
+    slug: "ogm",
   },
 ];

@@ -27,7 +27,7 @@ const Video: FC<VideoProps> = ({ videoUrl, width, height, className }) => {
         controls={false}
         style={{ borderRadius: "inherit" }}
       />
-      <div className="relative">
+      <div className="hidden sm:block relative">
         <div
           className="absolute right-4 bottom-4 rounded-full w-[24px] h-[24px] bg-stone-700/80 cursor-pointer"
           onClick={() => {
