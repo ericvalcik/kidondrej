@@ -326,12 +326,12 @@ export const domesticProjects: Projects[] = [
     slug: "cotyoci",
   },
   {
-    title: "Collectibe Toys",
+    title: "Collectible Toys",
     artist: "Yzomandias, Nik Tendo",
     content: () => {
       return (
         <>
-          <H1>Collectibe Toys - 3D Modelling</H1>
+          <H1>Collectible Toys - 3D Modelling</H1>
           <Video
             videoUrl={"/yzo/nikspin.MOV"}
             width={624}
