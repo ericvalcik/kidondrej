@@ -21,7 +21,7 @@ export default function Page() {
         ))}
       </div>
       <H2>CZ/SK Projects:</H2>
-      <div className="flex flex-col pt-2">
+      <div className="flex flex-col pt-2 pb-20">
         {domesticProjects.map((project) => (
           <ProjectItem
             key={project.slug}
@@ -46,11 +46,11 @@ const ProjectItem: FC<ProjectItemProps> = ({ title, description, link }) => {
 
   return (
     <div
-      className="group border-b last:border-none hover:text-primary/70 cursor-pointer w-full h-10 flex justify-between items-center"
+      className="group border-b last:border-none hover:text-primary/70 cursor-pointer w-full flex justify-between items-center"
       onClick={() => router.push(`projects/${link}`)}
     >
-      <div>{title}</div>
-      <div className="text-muted-foreground group-hover:text-muted-foreground/70">
+      <div className="py-2">{title}</div>
+      <div className="text-muted-foreground group-hover:text-muted-foreground/70 text-right py-2">
         {description}
       </div>
     </div>
