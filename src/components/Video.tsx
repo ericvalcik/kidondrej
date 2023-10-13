@@ -10,9 +10,16 @@ interface VideoProps {
   width?: number;
   height?: number;
   className?: string;
+  noSound?: boolean;
 }
 
-const Video: FC<VideoProps> = ({ videoUrl, width, height, className }) => {
+const Video: FC<VideoProps> = ({
+  videoUrl,
+  width,
+  height,
+  className,
+  noSound,
+}) => {
   const [playing, setPlaying] = useState(false);
 
   return (
@@ -21,26 +28,28 @@ const Video: FC<VideoProps> = ({ videoUrl, width, height, className }) => {
         url={videoUrl}
         loop={true}
         playing={true}
-        muted={!playing}
+        muted={!playing || noSound}
         width={`${width}px`}
         height={`${height}px`}
         controls={false}
         style={{ borderRadius: "inherit" }}
       />
-      <div className="hidden sm:block relative">
-        <div
-          className="absolute right-4 bottom-4 rounded-full w-[24px] h-[24px] bg-stone-700/80 cursor-pointer"
-          onClick={() => {
-            setPlaying(!playing);
-          }}
-        >
-          {!playing ? (
-            <VolumeX size={24} className="p-1" color="white" />
-          ) : (
-            <Volume2 size={24} className="p-1" color="white" />
-          )}
+      {!noSound && (
+        <div className="hidden sm:block relative">
+          <div
+            className="absolute right-4 bottom-4 rounded-full w-[24px] h-[24px] bg-stone-700/80 cursor-pointer"
+            onClick={() => {
+              setPlaying(!playing);
+            }}
+          >
+            {!playing ? (
+              <VolumeX size={24} className="p-1" color="white" />
+            ) : (
+              <Volume2 size={24} className="p-1" color="white" />
+            )}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

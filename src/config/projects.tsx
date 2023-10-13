@@ -294,6 +294,7 @@ export const domesticProjects: Projects[] = [
             width={624}
             height={624}
             className="mb-10 hidden sm:block"
+            noSound
           />
           <div className="sm:hidden flex justify-center">
             <Video
@@ -301,6 +302,7 @@ export const domesticProjects: Projects[] = [
               width={304}
               height={304}
               className="mb-10"
+              noSound
             />
           </div>
           <P>
@@ -501,22 +503,23 @@ export const domesticProjects: Projects[] = [
     slug: "nicholas",
   },
   {
-    title: "FROM HELL WITH LOVE Cover Art and Motion",
+    title: "FROM HELL WITH LOVE - Cover Art and Motion",
     artist: "Skinny Barber, Darewin",
     content: () => {
       return (
         <>
-          <H1>Cover Art and Animations for a Music Video</H1>
+          <H1>FROM HELL WITH LOVE - Cover Art and Motion</H1>
           <div className="hidden sm:flex justify-center gap-4 flex-row">
             <Video
-              videoUrl={"/nicholas/visual.mp4"}
-              width={304}
-              height={304}
+              videoUrl={"/skinny/motion.mov"}
+              width={219}
+              height={389}
               className="mb-10"
+              noSound
             />
-            <div className="w-[304px] h-[304px] rounded-xl overflow-clip">
+            <div className="w-[389px] h-[389px] rounded-xl overflow-clip">
               <Image
-                src="/nicholas/cover.jpg"
+                src="/skinny/cover.png"
                 alt="Decks"
                 width={1000}
                 height={1000}
@@ -524,10 +527,15 @@ export const domesticProjects: Projects[] = [
             </div>
           </div>
           <div className="flex sm:hidden flex-col justify-center gap-4 items-center">
-            <Video videoUrl={"/nicholas/visual.mp4"} width={292} height={292} />
+            <Video
+              videoUrl={"/skinny/motion.mov"}
+              width={292}
+              height={519}
+              noSound
+            />
             <div className="w-[292px] h-[292px] rounded-xl overflow-clip">
               <Image
-                src="/nicholas/cover.jpg"
+                src="/skinny/cover.png"
                 alt="Decks"
                 width={1000}
                 height={1000}
@@ -535,15 +543,13 @@ export const domesticProjects: Projects[] = [
             </div>
           </div>
           <P>
-            Cover Art and Animations for{" "}
-            <Redirect href="https://www.instagram.com/nicholasnaisson/">
-              @nicholasnaisson
-            </Redirect>
-            &apos;s album SNY II.
-            <br />
-            Go watch the Music Video on{" "}
-            <Redirect href="https://youtu.be/oG48LPXQTAw?si=YLBDXBm2aAyaOUx0">
-              YouTube
+            Cover Art and Motion for{" "}
+            <Redirect href="https://www.instagram.com/skinnybarber/">
+              @skinnybarber
+            </Redirect>{" "}
+            and{" "}
+            <Redirect href="https://www.instagram.com/lildarewin/">
+              @lildarewin
             </Redirect>
             .
           </P>
