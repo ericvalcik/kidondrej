@@ -9,7 +9,7 @@ export default function PagesLayout({
 }) {
   return (
     <div className="flex flex-col">
-      <nav className="w-full h-16 mb-20 backdrop-blur sticky top-0 shadow-sm">
+      <nav className="w-full h-16 mb-5 sm:mb-20 backdrop-blur sticky top-0 shadow-sm">
         <div className="max-w-5xl px-4 h-full mx-auto flex justify-between items-center">
           <Link
             href="/"
