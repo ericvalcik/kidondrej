@@ -2,6 +2,7 @@ import { FC } from "react";
 import dynamic from "next/dynamic";
 import { H1, P } from "@/components/typography";
 import Redirect from "@/components/Redirect";
+import Image from "next/image";
 
 const Video = dynamic(() => import("@/components/Video"), { ssr: false });
 
@@ -326,6 +327,47 @@ export const domesticProjects: Projects[] = [
       );
     },
     slug: "collectible-toys",
+  },
+  {
+    title: "Pod Drn - Cover Art and Merch Design",
+    artist: "Nik Tendo, Calin, Hasan",
+    content: () => {
+      return (
+        <>
+          <H1>Pod Drn Music Video - Cover + Merch Design</H1>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Image
+              src="/poddrn/cover.jpg"
+              alt="Cover Art"
+              width={304}
+              height={304}
+              className="rounded-xl overflow-clip"
+            />
+            <Image
+              src="/poddrn/merch.jpg"
+              alt="Merch Design"
+              width={304}
+              height={304}
+              className="rounded-xl overflow-clip"
+            />
+          </div>
+          <P>
+            Graphic design for the Cover Art and Merch.
+            <br />
+            Music video was done by{" "}
+            <Redirect href="https://www.youtube.com/@MOSTWANTEDRAP">
+              @MOSTWANTEDRAP
+            </Redirect>{" "}
+            , go check it out on{" "}
+            <Redirect href="https://youtu.be/NWQDLZTKX-U?si=9XpUGeikqVMRiLZE">
+              YouTube
+            </Redirect>
+            .
+          </P>
+        </>
+      );
+    },
+    slug: "pod-drn",
   },
 ];
 
