@@ -16,7 +16,7 @@ export default function PagesLayout({
             className="font-bold tracking-tighter no-underline flex items-center gap-4"
           >
             <KidOndrejAvatar small />
-            <span className="text-xl hidden sm:inline">k1d</span>
+            <span className="text-xl inline">k1d</span>
           </Link>
           <Navbar />
         </div>
