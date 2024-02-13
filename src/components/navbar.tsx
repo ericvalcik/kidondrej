@@ -34,22 +34,9 @@ export const Navbar: FC = () => {
         <NavigationMenuItem>
           <Link href="/tabs/projects" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Projects
+              Clients
             </NavigationMenuLink>
           </Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuLink
-            className={cn(
-              navigationMenuTriggerStyle(),
-              "text-gray-500 group-hover:text-gray-500 hover:bg-transparent group-hover:bg-transparent data-[active]:bg-transparent data-[state=open]:bg-transparent",
-            )}
-          >
-            Shop
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <ModeToggle />
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
